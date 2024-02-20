@@ -4,4 +4,3 @@ dist
 settings.json
 .vscode/
 .angular
-.package-lock.json
