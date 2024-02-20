@@ -46,5 +46,11 @@ The application should be runnable locally using `ng serve` for Angular and `npm
 
 We would like to see  how you would deliver this in a production environment, how would you like your team to deliver the code so that its production ready.
 
-The application is intended to showcase your proficiency in Angular and NestJS. But these are just to parts of the complete flow. What else would like to add if you would have more time to make this work in a prod environment?
+The application is intended to showcase your proficiency in Angular(Frontend development) and NestJS (API development). You are free to choose how you handle the validation of the in Nest  if you are familiar with NestJS you could consider using the build in functions. If you are new to nestJS, you can just add your validation logic in the controller which handles the post request. 
+
+We leave that all up to you! okay one more thing! could you list of task you would like to have added if you had more time? 
+
+Have fun and happy codding!
+
+The Team @AACB
 
