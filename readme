@@ -24,7 +24,7 @@ Note: **Validation can be handled by the API endpoint, specifically POST /paymen
 
 ### Table
 
-The table should present the payments provided in the JSON file **processedPayments.json**.
+The table should present the payments provided in the JSON file **processedPayments.json**. (can be found in the assets folder)
 
 You can add additional components if needed.
 
