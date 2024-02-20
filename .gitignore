@@ -1,4 +1,7 @@
- node_modules
- dist
- .DS_Store
- settings.json
+node_modules
+dist
+.DS_Store
+settings.json
+.vscode/
+.angular
+.package-lock.json
