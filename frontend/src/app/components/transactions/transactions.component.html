@@ -1,0 +1,13 @@
+<clr-datagrid>
+  <clr-dg-column>Sender IBAN</clr-dg-column>
+  <clr-dg-column>Amount</clr-dg-column>
+  <clr-dg-column>Recipient</clr-dg-column>
+  <clr-dg-column>Recipient IBAN</clr-dg-column>
+
+  <clr-dg-row *ngFor="let transaction of transactions">
+    <clr-dg-cell>{{ transaction.iban }}</clr-dg-cell>
+    <clr-dg-cell>{{ transaction.amount }}</clr-dg-cell>
+    <clr-dg-cell>{{ transaction.recipient }}</clr-dg-cell> 
+    <clr-dg-cell>{{ transaction.ibanRecipient }}</clr-dg-cell>
+  </clr-dg-row>
+</clr-datagrid>

@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "6b82b065-1c1f-448d-93e7-d9e3a2e2e996",
+		"name": "coding-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "accounts/transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/accounts/transactions?iban=NL5418281782461868",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "iban",
+							"value": "NL5418281782461868"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/accounts?iban=NL5418281782461868",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "iban",
+							"value": "NL5418281782461868"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"iban\": \"NL5418281782461868\",\n  \"amount\": 100.50,\n  \"recipient\": \"John Doe\",\n  \"ibanRecipient\": \"NL4729202283681073\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

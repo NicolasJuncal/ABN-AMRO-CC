@@ -1,4 +1,16 @@
-[
+import { Component } from '@angular/core';
+import { Transaction } from './transaction.model';
+import { ClarityModule } from '@clr/angular';
+import { CommonModule } from '@angular/common';
+@Component({
+  selector: 'app-transactions',
+  standalone: true,
+  templateUrl: './transactions.component.html',
+  styleUrls: ['./transactions.component.scss'],
+  imports: [CommonModule, ClarityModule], // Include CommonModule here
+})
+export class TransactionsComponent {
+  transactions: Transaction[] = [
     {
       "id": "65d5202187d3df51af7efc59",
       "iban": "NL54XXXX1782461868",
@@ -25,7 +37,7 @@
       "iban": "NL54XXXX1782461868",
       "amount": "$3,134.83",
       "recipient": "Melva Bradford",
-      "ibanRecepient": "NL47XXXX2283681073"
+      "ibanRecipient": "NL47XXXX2283681073"
     },
     {
       "id": "65d52021b2d038a3da66f12e",
@@ -84,3 +96,4 @@
       "ibanRecipient": "NL47XXXX2283681073"
     }
   ]
+}

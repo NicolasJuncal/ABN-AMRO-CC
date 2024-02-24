@@ -1,73 +1,77 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+Certainly, here's the README content without the bash code blocks:
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# TypeScript Backend
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This project is a backend service built with NestJS, TypeScript, and other supporting technologies. It's designed to provide a robust API for web applications.
 
-## Description
+## Getting Started
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Before you begin, ensure you have Node.js (preferably the latest stable version) and npm installed on your machine.
 
-## Installation
+### Installation
 
-```bash
-$ npm install
-```
+Clone the repository and install its dependencies:
 
-## Running the app
+1. `git clone`
+2. `cd typescript-backend`
+3. `npm install`
 
-```bash
-# development
-$ npm run start
+### Running the Application
 
-# watch mode
-$ npm run start:dev
+You can run the application in various environments using the following commands:
 
-# production mode
-$ npm run start:prod
-```
+- **Development Mode**: Watches for file changes and automatically reloads.
+    - `npm run start:dev`
+- **Debug Mode**: Similar to development mode but enables debugging.
+    - `npm run start:debug`
+- **Production Mode**: Runs the compiled JavaScript from the `dist` directory.
+    - `npm run start:prod`
 
-## Test
+### Building the Project
 
-```bash
-# unit tests
-$ npm run test
+To build the project and generate JavaScript files in the `dist` directory:
+- `npm run build`
 
-# e2e tests
-$ npm run test:e2e
+### Formatting Code
 
-# test coverage
-$ npm run test:cov
-```
+To format your TypeScript files using Prettier:
+- `npm run format`
 
-## Support
+### Linting
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+To lint your project files:
+- `npm run lint`
 
-## Stay in touch
+## Testing
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+The project uses Jest for unit and e2e testing. You can run tests using the following commands:
 
-## License
+## Testing with Postman
+To test the API endpoints with Postman, follow these steps:
 
-Nest is [MIT licensed](LICENSE).
+- Install Postman from the official website.
+- Open Postman and import the Postman collection file located at fullstack-assignment/backend/coding-challenge.postman_collection.json.
+- You can do this by clicking on "Import" at the top left corner of Postman and selecting the collection file.
+- After importing, you will see the collection in the left sidebar. Click on it to view the pre-configured requests.
+- Make sure your backend server is running, then select a request from the collection and hit the "Send" button to test it. You can modify the request details as needed.
+
+- **Run All Tests**:
+    - `npm run test`
+- **Watch Mode** (re-runs tests on file changes):
+    - `npm run test:watch`
+- **Coverage** (generates a coverage report):
+    - `npm run test:cov`
+- **Debug Tests**:
+    - `npm run test:debug`
+- **End-to-End Tests**:
+    - `npm run test:e2e`
+
+## Dependencies
+
+This project is built using the following major dependencies:
+
+- NestJS for the framework
+- `rxjs` for reactive programming
+- `uuid` for generating unique identifiers
+
+Development dependencies include TypeScript, ESLint, Prettier, Jest for testing, and several types packages for better development experience.

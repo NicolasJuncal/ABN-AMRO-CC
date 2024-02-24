@@ -1,9 +1,19 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { CreatePaymentDto } from './payments.dto';
+import { PaymentsService } from './payments.service';
 
-@Controller('payments')
+@Controller('payment')
 export class PaymentsController {
-    @Post()
-    create():string {
-        return 'Testing the Payments api';
-    }
+  constructor(private paymentsService: PaymentsService) {}
+
+  @Post()
+  @HttpCode(HttpStatus.OK)
+  createPayment(@Body() paymentDto: CreatePaymentDto) {
+    return this.paymentsService.processPayment(
+      paymentDto.iban,
+      paymentDto.amount,
+      paymentDto.recipient,
+      paymentDto.ibanRecipient,
+    );
+  }
 }

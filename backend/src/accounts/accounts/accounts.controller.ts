@@ -1,9 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Query } from "@nestjs/common";
+import { AccountsService } from "./accounts.service";
 
-@Controller('accounts')
+@Controller("accounts")
 export class AccountsController {
-    @Get()
-    get():string {
-        return 'Testing this api';
-    }
+  constructor(private readonly accountsService: AccountsService) {}
+
+  @Get()
+  getAccountByIban(@Query("iban") iban: string) {
+    return this.accountsService.findAccountByIban(iban);
+  }
+  @Get("transactions")
+  findTransactions(@Query("iban") iban: string) {
+    return this.accountsService.findTransactionsByIban(iban);
+  }
 }
