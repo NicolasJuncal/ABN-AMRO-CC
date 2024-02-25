@@ -1,0 +1,18 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  <form (ngSubmit)="authenticate()">
+    <div class="form-group">
+      <label for="ibanUser">IBAN User:</label>
+      <input type="text" id="ibanUser" name="ibanUser" [(ngModel)]="selectedAccount" list="accountOptions" required>
+      <datalist id="accountOptions">
+        <option *ngFor="let account of accounts" [value]="account.value">{{ account.label }}</option>
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
