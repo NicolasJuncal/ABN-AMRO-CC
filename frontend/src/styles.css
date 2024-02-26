@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+/* Basic Branding and Styling */
+.custom-datagrid .clr-datagrid {
+  --clr-data-grid-font-color: #004C3F; /* ABN AMRO Dark Green for text */
+  --clr-data-grid-background-color: #F9F9F9; /* Light background */
+  --clr-data-grid-row-hover: #E6F4F1; /* Light green for hover */
+  --clr-data-grid-column-border-color: #D1D1D1; /* Light grey for borders */
+  --clr-data-grid-header-bg-color: #026937; /* ABN AMRO Green for headers */
+  --clr-data-grid-header-font-color: #FFFFFF; /* White text for headers */
+}
+
+/* Header Customization */
+.custom-datagrid clr-dg-column-title {
+  color: var(--clr-data-grid-header-font-color);
+  font-weight: bold;
+}
+
+/* Cell Customization */
+.custom-datagrid clr-dg-cell {
+  color: var(--clr-data-grid-font-color);
+  border-bottom: 1px solid var(--clr-data-grid-column-border-color);
+}
+
+/* Hover and Selection */
+.custom-datagrid clr-dg-row:hover {
+  background-color: var(--clr-data-grid-row-hover);
+}
+
+/* Footer and Pagination Customization */
+.custom-datagrid .clr-datagrid-footer {
+  background-color: var(--clr-data-grid-header-bg-color);
+  color: var(--clr-data-grid-header-font-color);
+}

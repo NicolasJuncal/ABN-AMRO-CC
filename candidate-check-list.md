@@ -8,7 +8,7 @@ Task 1: Set up Angular project with Angular CLI.
   Module: ng generate module module-name or ng g m module-name  
 
 Task 2: Install and configure Clarity Design System in the Angular project.
- ng add @clr/angular - Skipping installation: Package already installed
+Skipping installation: Package already installed
  as it was already config.
 Task 3: Create a PaymentFormComponent for inputting payment details.
  
@@ -27,7 +27,7 @@ Task 3: Implement POST /payment endpoint for payment submission.
 ok
 Sub-task: Validate incoming payment data.
 ok
-Epic: Integration and Testing
+Epic: Testing
 
 Task 1: Ensure frontend and backend are properly integrated.
 Task 2: Manual testing of end-to-end functionality.
@@ -38,13 +38,3 @@ Task 1: Implement client-side validation for the payment form.
 Task 2: Add sorting and filtering capabilities to the payments table.
 Task 3: Implement unit tests for critical frontend and backend functions.
 Task 4: Add error handling and user feedback mechanisms in the UI.
-Epic: Production Readiness
-
-Task 1: Dockerize the frontend and backend applications.
-Task 2: Set up a basic CI/CD pipeline with GitHub Actions or GitLab CI.
-Task 3: Document the API using Swagger.
-Task 4: Create a README file with project setup and running instructions.
-Epic: Security and Performance
-
-Task 1: Implement HTTPS for secure communication.
-Task 2: Optimize application performance (e.g., Angular build optimizations, NestJS response compression).

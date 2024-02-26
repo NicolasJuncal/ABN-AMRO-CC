@@ -1,29 +1,92 @@
 <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" clrForm>
+  <!-- Sender's IBAN -->
   <clr-input-container>
-    <label>Sender's IBAN</label>
-    <input clrInput formControlName="iban" placeholder="Sender's IBAN" />
+    <label>Sender's IBAN *</label>
+    <input
+      clrInput
+      formControlName="iban"
+      placeholder="NL54 3704 0044 0532 0130 00"
+    />
+    <clr-control-helper
+      >Enter the sender's IBAN in international format</clr-control-helper
+    >
+    <clr-control-error *ngIf="paymentForm.get('iban')?.hasError('required')"
+      >Sender's IBAN is required</clr-control-error
+    >
+    <clr-control-error *ngIf="paymentForm.get('iban')?.hasError('max')"
+      >IBAN max 20 characters</clr-control-error
+    >
   </clr-input-container>
 
+  <!-- Recipient's Name -->
   <clr-input-container>
-    <label>Recipient</label>
-    <input clrInput formControlName="recipient" placeholder="Recipient's Name" />
+    <label>Recipient *</label>
+    <input
+      clrInput
+      formControlName="recipient"
+      placeholder="Recipient's Name"
+    />
+    <clr-control-helper>Full name of the payment recipient</clr-control-helper>
+    <clr-control-error
+      *ngIf="paymentForm.get('recipient')?.hasError('required')"
+      >Recipient's name is required</clr-control-error
+    >
+    <clr-control-error *ngIf="paymentForm.get('recipient')?.hasError('max')"
+      >Recipient's name max 50 characters</clr-control-error
+    >
   </clr-input-container>
 
+  <!-- Recipient's IBAN -->
   <clr-input-container>
-    <label>Recipient's IBAN</label>
-    <input clrInput formControlName="ibanRecipient" placeholder="Recipient's IBAN" />
+    <label>Recipient's IBAN *</label>
+    <input
+      clrInput
+      formControlName="ibanRecipient"
+      placeholder="NL54 3704 0044 0532 0130 01"
+    />
+    <clr-control-helper
+      >Enter the recipient's IBAN in international format</clr-control-helper
+    >
+    <clr-control-error
+      *ngIf="paymentForm.get('ibanRecipient')?.hasError('required')"
+      >Recipient's IBAN is required</clr-control-error
+    >
+    <clr-control-error *ngIf="paymentForm.get('ibanRecipient')?.hasError('max')"
+      >Recipient's IBAN max 20 characters</clr-control-error
+    >
   </clr-input-container>
 
+  <!-- Amount -->
   <clr-input-container>
-    <label>Amount in USD</label>
-    <input clrInput formControlName="amount" type="number" placeholder="Amount" />
+    <label>Amount in USD *</label>
+    <input clrInput formControlName="amount" type="number" placeholder="100" />
+    <clr-control-helper>Transaction amount in USD</clr-control-helper>
+    <clr-control-error *ngIf="paymentForm.get('amount')?.hasError('required')"
+      >Amount is required</clr-control-error
+    >
+    <clr-control-error *ngIf="paymentForm.get('amount')?.hasError('max')"
+      >Amount must be up to 10,000 USD</clr-control-error
+    >
   </clr-input-container>
 
+  <!-- Description -->
   <clr-textarea-container>
     <label>Description</label>
-    <textarea clrTextarea formControlName="description" placeholder="Description"></textarea>
+    <textarea
+      clrTextarea
+      formControlName="description"
+      placeholder="Payment for services"
+      maxlength="50"
+    ></textarea>
+    <clr-control-helper>Max 50 characters</clr-control-helper>
+    <clr-control-error
+      *ngIf="paymentForm.get('description')?.errors?.['maxlength'] != null"
+      >Description cannot exceed 50 characters</clr-control-error
+    >
   </clr-textarea-container>
 
-  <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid">Submit</button>
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid">
+    Submit
+  </button>
 </form>
-

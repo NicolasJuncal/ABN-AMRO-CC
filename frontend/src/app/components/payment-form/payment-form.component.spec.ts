@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { ClarityModule } from '@clr/angular'; 
 import { PaymentFormComponent } from './payment-form.component';
 
 describe('PaymentFormComponent', () => {
@@ -8,7 +9,11 @@ describe('PaymentFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PaymentFormComponent]
+      declarations: [PaymentFormComponent],
+      imports: [
+        ReactiveFormsModule, 
+        ClarityModule, 
+      ]
     })
     .compileComponents();
     
@@ -20,4 +25,12 @@ describe('PaymentFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+
+  it('should validate recipient field as required', () => {
+    let recipient = component.paymentForm.get('recipient');
+    expect(recipient?.valid).toBeFalsy();
+  
+    recipient?.setValue('John Doe');
+    expect(recipient?.valid).toBeTruthy();
+  });
+  });

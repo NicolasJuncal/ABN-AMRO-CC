@@ -11,7 +11,7 @@ import { AppDataService } from '../../services/data-service/data.service';
   selector: 'app-transactions',
   standalone: true,
   templateUrl: './transactions.component.html',
-  styleUrls: ['./transactions.component.scss'],
+  styleUrls: ['./transactions.component.css'],
   imports: [CommonModule, ClarityModule, HttpClientModule],
 })
 export class TransactionsComponent implements OnInit {
