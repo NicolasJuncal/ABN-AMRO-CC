@@ -21,4 +21,9 @@ export class CreatePaymentDto {
   @Min(0.01) // Assuming the minimum transaction amount
   @Max(10000) // Assuming the max transaction amount
   amount: number;
+
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(50) 
+  description: string;
 }

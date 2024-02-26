@@ -1,17 +1,17 @@
 <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" clrForm>
   <clr-input-container>
     <label>Sender's IBAN</label>
-    <input clrInput formControlName="senderIban" placeholder="Sender's IBAN" />
+    <input clrInput formControlName="iban" placeholder="Sender's IBAN" />
   </clr-input-container>
 
   <clr-input-container>
-    <label>Recipient's Name</label>
-    <input clrInput formControlName="recipientName" placeholder="Recipient's Name" />
+    <label>Recipient</label>
+    <input clrInput formControlName="recipient" placeholder="Recipient's Name" />
   </clr-input-container>
 
   <clr-input-container>
     <label>Recipient's IBAN</label>
-    <input clrInput formControlName="recipientIban" placeholder="Recipient's IBAN" />
+    <input clrInput formControlName="ibanRecipient" placeholder="Recipient's IBAN" />
   </clr-input-container>
 
   <clr-input-container>
@@ -26,3 +26,4 @@
 
   <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid">Submit</button>
 </form>
+

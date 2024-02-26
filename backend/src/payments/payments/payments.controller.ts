@@ -14,6 +14,7 @@ export class PaymentsController {
       paymentDto.amount,
       paymentDto.recipient,
       paymentDto.ibanRecipient,
+      paymentDto.description
     );
   }
 }

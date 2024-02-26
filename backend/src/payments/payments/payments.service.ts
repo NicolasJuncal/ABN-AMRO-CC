@@ -9,6 +9,8 @@ export class PaymentsService {
     amount: number,
     recipient: string,
     ibanRecipient: string,
+    description: string
+
   ) {
     const account = accounts.find((account) => account.iban === iban);
     const recipientAccount = accounts.find(
@@ -32,6 +34,8 @@ export class PaymentsService {
       amount: `$${amount.toFixed(2)}`,
       recipient,
       ibanRecipient,
+      description
+
     };
 
     transactions.push(transaction);

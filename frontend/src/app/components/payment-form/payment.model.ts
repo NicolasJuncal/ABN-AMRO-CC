@@ -1,7 +1,7 @@
 export interface PaymentFormData {
-  senderIban: string;
-  recipientName: string;
-  recipientIban: string;
+  iban: string;
+  recipient: string;
+  ibanRecipient: string;
   amount: number;
   description: string;
 }

@@ -4,7 +4,7 @@
   <form (ngSubmit)="authenticate()">
     <div class="form-group">
       <label for="ibanUser">IBAN User:</label>
-      <input type="text" id="ibanUser" name="ibanUser" [(ngModel)]="selectedAccount" list="accountOptions" required>
+      <input type="text" [(ngModel)]="ibanUser" name="ibanUser" list="accountOptions"/>
       <datalist id="accountOptions">
         <option *ngFor="let account of accounts" [value]="account.value">{{ account.label }}</option>
       </datalist>
