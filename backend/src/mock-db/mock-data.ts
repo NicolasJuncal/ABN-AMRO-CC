@@ -20,7 +20,7 @@ export const accounts = [
   { iban: "NL4760532283681073", userName: "account19", balance: 5678 },
   { iban: "NL4730572283681073", userName: "account20", balance: 2345 },
 ];
-
+// mocked and changed the data as I think there should be other services integrated, so to simplify I've changed the data
 export const transactions = [
   {
     id: "65d5202187d3df51af7efc59",

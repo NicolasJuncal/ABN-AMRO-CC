@@ -62,6 +62,7 @@
   color: var(--clr-data-grid-header-font-color);
 }
 
+/* Header and Pagination Customization */
 .header {
   background-color: #FFF; 
 }

@@ -1,26 +1,25 @@
 // app.module.ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { routes } from './app.routes'; 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { CommonModule } from '@angular/common';
-
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import { routes } from "./app.routes";
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./components/login/login.component";
+import { CommonModule } from "@angular/common";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-  ],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
     CommonModule,
+    BrowserAnimationsModule,
+    BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -4,14 +4,27 @@
   <form (ngSubmit)="authenticate()">
     <div class="form-group">
       <label for="ibanUser">IBAN User:</label>
-      <input type="text" [(ngModel)]="ibanUser" name="ibanUser" list="accountOptions"/>
+      <input
+        type="text"
+        [(ngModel)]="ibanUser"
+        name="ibanUser"
+        list="accountOptions"
+      />
       <datalist id="accountOptions">
-        <option *ngFor="let account of accounts" [value]="account.value">{{ account.label }}</option>
+        <option *ngFor="let account of accounts" [value]="account.value">
+          {{ account.label }}
+        </option>
       </datalist>
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+      />
     </div>
     <button type="submit">Login</button>
   </form>

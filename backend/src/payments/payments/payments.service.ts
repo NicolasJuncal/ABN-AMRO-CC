@@ -35,7 +35,6 @@ export class PaymentsService {
       recipient,
       ibanRecipient,
       description
-
     };
 
     transactions.push(transaction);

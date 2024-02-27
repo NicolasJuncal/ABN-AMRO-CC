@@ -27,7 +27,6 @@ export class PaymentFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
     private apiService: CommonBusinessApiService,
     private dataService: AppDataService
   ) {
@@ -40,30 +39,22 @@ export class PaymentFormComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.subscriptions.add(
-      this.dataService.accountsData$.subscribe((accountsData) => {
-        if (accountsData && accountsData.iban) {
-          this.paymentForm.get("iban")?.setValue(accountsData.iban);
-        } else {
-          // Assuming 'ibanUser' is stored correctly and is the IBAN you need
-          const ibanUser = localStorage.getItem("ibanUser");
-          if (ibanUser) {
-            this.subscriptions.add(
-              this.apiService.getAccounts(ibanUser).subscribe(
-                (data) => {
-                  this.paymentForm.get("iban")?.setValue(data.iban);
-                  // Optionally, update your dataService with the new accounts data
-                  this.dataService.setAccountsData(data);
-                },
-                (error) => {
-                  console.error("Failed to fetch accounts:", error);
-                  // Handle the error, e.g., show an error message
-                }
-              )
-            );
+    const ibanUser = localStorage.getItem("ibanUser");
+    if (ibanUser) {
+      this.subscriptions.add(
+        this.apiService.getAccounts(ibanUser).subscribe(
+          (data) => {
+            this.paymentForm.get("iban")?.setValue(data.iban);
+            this.dataService.setAccountsData(data);
+          },
+          (error) => {
+            throw new Error("Failed to fetch accounts:");
           }
-        }
-      })
+        )
+      );
+    }
+    throw new Error(
+      "We are experiencing techinal issues, call us on 02 XXX XXX"
     );
   }
 
@@ -74,10 +65,11 @@ export class PaymentFormComponent implements OnInit {
     if (this.paymentForm.valid) {
       this.apiService.makePayment(this.paymentForm.value).subscribe({
         next: (data) => {
-          alert("nice man");
-          console.log(data);
+          alert(`Payment processed successfully`);
         },
-        error: (error) => console.error("Failed to :", error),
+        error: (error) => {
+          alert(`Technical ${error}`);
+        },
       });
     } else {
       console.log("Form is not valid.");
